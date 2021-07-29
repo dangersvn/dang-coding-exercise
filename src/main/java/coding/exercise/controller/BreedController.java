@@ -12,12 +12,13 @@ import java.io.*;
 import java.util.*;
 
 @RestController
+@RequestMapping("api/breeds")
 public class BreedController {
 
     @Autowired
     ObjectMapper mapper;
 
-    @RequestMapping("/list/all")
+    @RequestMapping("list/all")
     public ResponseEntity<ResponseDTO> getAllBreeds() throws IOException {
         ClassLoader classLoader = getClass().getClassLoader();
         InputStream inputStream = classLoader.getResourceAsStream("apidata.json");
